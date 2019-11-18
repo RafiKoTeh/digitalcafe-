@@ -16,10 +16,10 @@ def get_product(code):
 def get_products():
     product_list = []
 
-    for i,v in products.items():
-        product = v
-        product.setdefault("code",i)
-        product_list.append(product)
+for i,v in products.items():
+    product = v
+    product.setdefault("code",i)
+    product_list.append(product)
         
     return product_list
 

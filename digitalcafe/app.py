@@ -78,7 +78,7 @@ def addtocart():
     quantity = int(request.form.get('quantity'))
     product = db.get_product(int(code))
     item=dict()
-# A click to add a product translates to a quantity of 1 for now
+# A click to add a product translates to a quantity of 1 for now, creating a temporary dictionary
     item["qty"] = quantity
     item["code"] = code
     item["name"] = product["name"]
@@ -92,6 +92,8 @@ def addtocart():
     session["cart"]=cart
     return redirect('/cart')
 
+#args are variables you send to an argument/class means of transferring infromation from one part of the code to another
+#form are ways of interacting with the user 
 @app.route('/cart')
 def cart():
     return render_template('cart.html')
